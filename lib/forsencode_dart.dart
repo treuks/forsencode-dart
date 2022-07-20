@@ -37,14 +37,19 @@ String toForsenCode(String text) {
       code.write("f");
     }
 
-    if ((ascii >> 4) & 3 == 0) {
-      code.write("Ö");
-    } else if ((ascii >> 4) & 3 == 1) {
-      code.write("ö");
-    } else if ((ascii >> 4) & 3 == 2) {
-      code.write("O");
-    } else {
-      code.write("o");
+    switch ((ascii >> 4) & 3) {
+      case 0:
+        code.write("Ö");
+        break;
+      case 1:
+        code.write("ö");
+        break;
+      case 2:
+        code.write("O");
+        break;
+      default:
+        code.write("o");
+        break;
     }
 
     if ((ascii & 8) != 0) {
