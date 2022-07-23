@@ -10,4 +10,14 @@ void main() {
     expect(toForsenCode("rust Randers 🚀 🦀"),
         "ForsEn ForSeN ForsEN ForSen fOrsen FörsEn FOrseN FORSEn FOrSen FOrSeN ForsEn ForsEN fOrsen 🚀 🦀");
   });
+  test('ForsenCode Decode test 1', () {
+    expect(
+        fromForsenCode("ForseN ForSEN FOrSeN ForsEn ForSen FoRseN"), "qwerty");
+  });
+  test('ForsenCode Decode test 2', () {
+    expect(
+        fromForsenCode(
+            "ForsEn ForSeN ForsEN ForSen fOrsen FörsEn FOrseN FORSEn FOrSen FOrSeN ForsEn ForsEN fOrsen 🚀 🦀"),
+        "rust Randers 🚀🦀");
+  });
 }
